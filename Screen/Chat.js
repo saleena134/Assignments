@@ -1,16 +1,5 @@
 import React, {useState, useRef, useCallback, useEffect} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  FlatList,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {GiftedChat} from 'react-native-gifted-chat';
 import {useDispatch} from 'react-redux';
@@ -28,8 +17,9 @@ const Chat = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     console.log('initiateSocketConnection');
-    // enter your websocket url
+    // enter your websocket url to open connection
     ws.current = new WebSocket('wss://');
+    // enter your websocket url to open connection
 
     ws.current.onopen = () => {
       console.log('connection establish open');
